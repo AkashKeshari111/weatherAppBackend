@@ -1,6 +1,7 @@
-const mongoose=require("mongoose");
+const { connect } = require("mongoose");
+require("dotenv").config();
 
+const MONGO_URL = process.env.MONGO_DATABASE;
+const connection = connect(MONGO_URL);
 
-const connect=mongoose.connect("mongodb://127.0.0.1:27017/weather");
-
-module.exports=connect;
+module.exports = connection;
